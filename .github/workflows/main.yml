@@ -22,10 +22,12 @@ jobs:
       - name: Build Lambda container
         run: sam build
 
-  test:
+  build-test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - name: Build Lambda container
+        run: sam build
       - name: Install Python 3.8
         uses: actions/setup-python@v1
         with:
