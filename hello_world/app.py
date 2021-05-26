@@ -1,5 +1,9 @@
 import json
+from hello_world import message_generator
 
+
+def get_message():
+    return message_generator.get_message()
 
 def lambda_handler(event, context):
     """Sample pure Lambda function
@@ -27,7 +31,7 @@ def lambda_handler(event, context):
         "statusCode": 200,
         "body": json.dumps(
             {
-                "message": "hello world",
+                "message": get_message(),
             }
         ),
     }

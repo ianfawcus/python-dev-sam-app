@@ -2,7 +2,7 @@ import json
 import boto3
 import botocore
 
-def test_helloworldfunction():
+def test_helloworld():
     # Set "running_locally" flag if you are running the integration test locally
     # this requires local lambda to be running using 'sam local start-lambda'
     running_locally = True
@@ -29,8 +29,12 @@ def test_helloworldfunction():
     # locally if it is configured to do so
     response = lambda_client.invoke(FunctionName="HelloWorldFunction")
     payload = json.loads(response["Payload"].read().decode('ascii'))
-    #print(payload)
 
     # Verify the response
     assert payload["statusCode"] == 200
-    assert json.loads(payload["body"])["message"] == "hello world"
+    messages = [
+        'hello world',
+        'top of the morning to ya',
+        'word up sucka'
+    ]
+    assert json.loads(payload["body"])["message"] in messages
