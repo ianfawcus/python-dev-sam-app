@@ -23,8 +23,11 @@ Resources:
             Method: get
     Metadata:
       Dockerfile: Dockerfile
-      DockerContext: ./hello_world
-      DockerTag: python3.8-v1
+      DockerContext: ./
+      DockerTag: local-test
+      DockerBuildArgs: {
+        "FUNCTION_NAME": "hello_world"
+      }
 
 Outputs:
   # ServerlessRestApi is an implicit API created out of Events key under Serverless::Function

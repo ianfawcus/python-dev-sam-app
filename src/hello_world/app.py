@@ -1,5 +1,5 @@
 import json
-from hello_world import message_generator
+from src.common import message_generator
 
 
 def get_message():
@@ -26,6 +26,8 @@ def lambda_handler(event, context):
 
         Return doc: https://docs.aws.amazon.com/apigateway/latest/developerguide/set-up-lambda-proxy-integrations.html
     """
+
+    print("just about to return the message...")
 
     return {
         "statusCode": 200,
