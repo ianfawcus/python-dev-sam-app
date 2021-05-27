@@ -28,6 +28,23 @@ Resources:
       DockerBuildArgs: {
         "FUNCTION_NAME": "hello_world"
       }
+  ToTheMoonFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      PackageType: Image
+      Events:
+        HelloWorld:
+          Type: Api
+          Properties:
+            Path: /moon
+            Method: get
+    Metadata:
+      Dockerfile: Dockerfile
+      DockerContext: ./
+      DockerTag: local-test
+      DockerBuildArgs: {
+        "FUNCTION_NAME": "to_the_moon"
+      }
 
 Outputs:
   # ServerlessRestApi is an implicit API created out of Events key under Serverless::Function
@@ -42,3 +59,12 @@ Outputs:
   HelloWorldFunctionIamRole:
     Description: "Implicit IAM Role created for Hello World function"
     Value: !GetAtt HelloWorldFunctionRole.Arn
+  ToTheMoonApi:
+    Description: "API Gateway endpoint URL for Prod stage for To The Moon function"
+    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/moon/"
+  ToTheMoonFunction:
+    Description: "To The Moon Lambda Function ARN"
+    Value: !GetAtt ToTheMoonFunction.Arn
+  ToTheMoonFunctionIamRole:
+    Description: "Implicit IAM Role created for To The Moon function"
+    Value: !GetAtt ToTheMoonFunctionRole.Arn
