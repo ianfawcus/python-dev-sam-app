@@ -26,3 +26,9 @@ full: build install local-lambda-start
 	pytest tests/ ;\
 	./cicd/kill-sam-local-lambda.sh
 
+docker-clean-containers:
+	docker ps -q | xargs docker stop
+	docker ps -aq | xargs docker rm
+
+docker-clean-images: docker-clean-containers
+	docker image prune -a
