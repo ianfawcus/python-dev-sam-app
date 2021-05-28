@@ -38,5 +38,3 @@ jobs:
         run: make local-lambda-start
       - name: Run tests with pytest
         run: make test
-      - name: Stop local Lambda service
-        run: make local-lambda-stop
