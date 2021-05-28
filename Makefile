@@ -31,4 +31,5 @@ docker-clean-containers:
 	docker ps -aq | xargs docker rm
 
 docker-clean-images: docker-clean-containers
+	# careful! Deletes ALL images
 	docker image prune -a
