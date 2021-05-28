@@ -1,6 +1,6 @@
 # python-dev-sam-app
 
-Demo repo to illustrate how to organise a Python project for deployment as Lambda functions using AWS SAM
+Demo repo to illustrate how to organise a Python project for deployment as Lambda functions as Docker containers using AWS SAM
 
 The code is built on boilerplate code for a "hello world" API provided by AWS for learning SAM
 
