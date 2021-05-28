@@ -35,6 +35,6 @@ def test_helloworld():
     messages = [
         'hello world',
         'top of the morning to ya',
-        'word up sucka'
+        'Hola! Buenos dias'
     ]
     assert json.loads(payload["body"])["message"] in messages

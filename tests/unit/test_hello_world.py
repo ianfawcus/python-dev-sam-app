@@ -72,6 +72,6 @@ def test_lambda_handler(apigw_event):
     messages = [
         'hello world',
         'top of the morning to ya',
-        'word up sucka'
+        'Hola! Buenos dias'
     ]
     assert data["message"] in messages
