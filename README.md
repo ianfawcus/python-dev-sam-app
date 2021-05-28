@@ -1,5 +1,13 @@
 # python-dev-sam-app
 
+Demo repo to illustrate how to organise a Python project for deployment as Lambda functions using AWS SAM
+
+The code is built on boilerplate code for a "hello world" API provided by AWS for learning SAM
+
+The text below is the original README text, so not fully aligned with the code - updates coming soon.
+
+
+
 This project contains source code and supporting files for a serverless application that you can deploy with the SAM CLI. It includes the following files and folders.
 
 - hello_world - Code for the application's Lambda function and Project Dockerfile.
